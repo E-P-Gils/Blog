@@ -1,7 +1,7 @@
 [
     {
-        "username": "Skippy Scooter",
-        "email": "skipscoots@skippyscooter.com",
-        "password": "SkippyScooter555"
+        "username": "Cheryl",
+        "email": "cheryl@chameleoncore.com",
+        "password": "Chameleon"
       },
 ]

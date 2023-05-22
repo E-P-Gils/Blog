@@ -1,0 +1,39 @@
+<section class="hero is-primary is-bold" style="background-color: #964B00;">
+    <div class="hero-body">
+        <h1 style="color: #ffffff;">BLOG</h1>
+        <button id="login-button" class="button is-pulled-right">Login</button>
+        <button id="post-button" class="button is-pulled-right">Post</button>
+    </div>
+</section>
+
+<script src="/js/loginbutton.js"></script>
+<script src="/js/postbutton.js"></script>
+
+<form class="search-form" method="post" action="/search">
+    <input class="input is-primary" id="search-form" name="keyword" type="text" placeholder="Primary input">
+    <div class="buttons">
+        <button class="button is-primary" id="search-button">Search</button>
+    </div>
+</form>
+
+{{#each items as |item|}}
+<div class="card" style="background-color: #964B00;">
+    <header class="card-header">
+        <p class="card-header-title" style="color: #ffffff;">
+            Title: {{item.title}}
+        </p>
+        <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+        </button>
+    </header>
+    <div class="card-content">
+        <div class="content" style="color: #ffffff;">
+            {{item.description}}
+        </div>
+    </div>
+</div>
+{{/each}}
+
+<script src="js/homepage.js"></script>
