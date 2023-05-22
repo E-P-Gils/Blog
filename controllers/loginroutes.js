@@ -2,13 +2,10 @@ const { User } = require('../models');
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 
-//changed casing for push 
-
 router.get('/', async (req, res) => {
   res.render('login');
 })
 
-//post name/email/password data to the database when the user creates an account
 router.post('/create', async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -19,7 +16,7 @@ router.post('/create', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.logged_in = true; //registers them as logged in after creating an account
+      req.session.logged_in = true; 
       req.session.user_id = user.id;
       res.json({ user: user, message: 'Account created!' });
     });
@@ -34,8 +31,6 @@ router.post('/create', async (req, res) => {
   }
 });
 
-
-//post request route to log someone in when they log in
 router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;

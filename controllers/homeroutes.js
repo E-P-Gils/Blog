@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
               ]
             });
         const posts = post.map((project) => project.get({ plain: true }));
-        const items = cpus.concat(gpus, posts);
+        const items = cpus.concat(posts);
         res.render('homepage', {
             items
         });
