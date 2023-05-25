@@ -6,7 +6,7 @@ const { post, User } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-        const post = await post.findAll({
+       const posts = await post.findAll({
             include: [
                 {
                   model: User,
@@ -15,8 +15,7 @@ router.get('/', async (req, res) => {
                 }
               ]
             });
-        const posts = post.map((project) => project.get({ plain: true }));
-        const items = cpus.concat(posts);
+        const items = posts.map((project) => project.get({ plain: true }));
         res.render('homepage', {
             items
         });
@@ -28,4 +27,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/post', async (req, res) => {
+    try {
 
+        res.render('post');
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+
+    }
+});
+
+
+module.exports = router;

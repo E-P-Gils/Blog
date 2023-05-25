@@ -17,16 +17,12 @@ router.get('/post', async (req, res) => {
 router.post('/post', async (req, res) => {
     try {
         const user_id = req.session.user_id
-        console.log(user_id);
         const { title, description } = req.body;
-        console.log("Hit 2")
-        console.log(ourPrice);
-        const user = await memory.create({
+        const user = await post.create({
             title,
             description,
         })
 
-        console.log(ourPrice);
         res.json({ user: user, email: user.email, message: 'Upload successful!' });
 
     } catch (err) {

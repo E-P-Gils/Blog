@@ -1,12 +1,10 @@
 const createFormHandler = async (event) => {
     event.preventDefault();
 
-    const name = document.querySelector('#post_title').value.trim();
-    console.log(name);
+    const title = document.querySelector('#post_title').value.trim();
     const description = document.querySelector('#post_description').value.trim();
-    console.log(description);
 
-    if (name && description && brand && MSRP && ourPrice && cores && threads) {
+    if (title && description) {
         const response = await fetch('/upload/post', {
             method: 'POST',
             body: JSON.stringify({ title, description }),
