@@ -5,14 +5,14 @@ const createFormHandler = async (event) => {
     const description = document.querySelector('#post_description').value.trim();
 
     if (title && description) {
-        const response = await fetch('/upload/post', {
+        const response = await fetch('/post/post', {
             method: 'POST',
             body: JSON.stringify({ title, description }),
             headers: { 'Content-Type': 'application/json' },
         });
         console.log("Made Post")
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/');
         }
         else {
             alert("Must enter a title and description")
