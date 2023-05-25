@@ -10,7 +10,8 @@
     "sequelize": "^6.31.1"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "node seeds/seed.js"
   },
   "name": "blog",
   "description": "Example Blog.",

@@ -33,16 +33,16 @@ router.post('/create', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    const user = await User.findOne({ where: { username } });
+    const user = await User.findOne({ where: { email } });
 
     if (!user) {
       res
         .status(400)
         .json({ message: 'Incorrect username or password, please try again' });
       return;
-    }
+    } 
 
     const validPassword = await bcrypt.compare(
       password,
