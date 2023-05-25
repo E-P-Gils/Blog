@@ -1,4 +1,15 @@
 {
+  "name": "techblogtest",
+  "version": "1.0.0",
+  "description": "Example Blog.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "node seeds/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.6",
@@ -9,15 +20,7 @@
     "mysql2": "^3.3.1",
     "sequelize": "^6.31.1"
   },
-  "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "node seeds/seed.js"
-  },
-  "name": "blog",
-  "description": "Example Blog.",
-  "version": "1.0.0",
-  "main": "server.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "engines": {
+    "node": "18.15"
+  }
 }
